@@ -12,7 +12,21 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+            screens: {
+        'custom': '1019px', // Define a custom breakpoint
+      },
     },
   },
   plugins: [],
 } satisfies Config;
+
+// module.exports = {
+//   theme: {
+//     extend: {
+//       screens: {
+//         'custom': '1029px', // Define a custom breakpoint
+//       },
+//     },
+//   },
+//   plugins: [],
+// };
