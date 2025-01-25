@@ -19,6 +19,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Oindrila",
   description: "Portfolio",
+  icons: {
+    icon: [
+      {
+          url: "/asset/favicon.png", // /public path
+          href: "/asset/favicon.png", // /public path
+      },
+  ],
+  }
 };
 
 export default function RootLayout({

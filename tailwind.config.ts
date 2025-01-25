@@ -19,14 +19,3 @@ export default {
   },
   plugins: [],
 } satisfies Config;
-
-// module.exports = {
-//   theme: {
-//     extend: {
-//       screens: {
-//         'custom': '1029px', // Define a custom breakpoint
-//       },
-//     },
-//   },
-//   plugins: [],
-// };
