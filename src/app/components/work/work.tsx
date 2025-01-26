@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiExternalLink } from "react-icons/fi"; // Install lucide-react for icons
+import { FiExternalLink } from "react-icons/fi"; // Install react-icons
 
 interface Project {
   name: string;
@@ -17,19 +17,19 @@ const projects: Project[] = [
     liveLink: "https://your-portfolio.com",
   },
   { 
-    name: "Task Manager App", 
-    githubLink: "https://github.com/your-username/task-manager-app",
+    name: "The Corporate Dictionary", 
+    githubLink: "https://github.com/oindrila-b/TheCorporateDictionary",
     liveLink: "https://task-manager-app.com",
   },
   { 
-    name: "E-commerce Platform", 
-    githubLink: "https://github.com/your-username/e-commerce-platform",
+    name: "Affirmation-extension", 
+    githubLink: "https://github.com/oindrila-b/affirmation-ext",
     liveLink: "https://ecommerce-platform.com",
   },
   { 
-    name: "Blog CMS", 
-    githubLink: "https://github.com/your-username/blog-cms",
-    liveLink: "https://blog-cms.com",
+    name: "Chat App", 
+    githubLink: "https://github.com/oindrila-b/ChatApp",
+    liveLink: "https://chat-app-uhfv.onrender.com/",
   },
 ];
 
@@ -48,7 +48,7 @@ const cardVariants = {
 
 const WorkSection: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 flex flex-col items-center justify-center">
+    <div className="min-h-screen py-16 flex flex-col items-center justify-center bg-gray-200">
       <div className="container mx-auto px-8">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-12">
           My Work
@@ -88,7 +88,7 @@ const WorkSection: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-indigo-400 hover:text-indigo-300 flex items-center"
                   >
-                    <FiExternalLink className="w-5 h-5 ml-2 sm:w-6 sm:h-6 " aria-label="Live link" />
+                    <FiExternalLink className="w-5 h-5 ml-2 sm:w-6 sm:h-6" aria-label="Live link" />
                   </a>
                 )}
               </div>
