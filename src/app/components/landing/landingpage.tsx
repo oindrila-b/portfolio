@@ -101,7 +101,7 @@ export default function LandingPage() {
           </motion.div>
         </motion.div>
       </div>
-      <motion.div className="text-lg lg:text-3xl justify-items-center">
+      {/* <motion.div className="text-lg lg:text-3xl justify-items-center">
         <Typewriter
           options={{
             strings: ['SDE', 'BACKEND', 'FRONTEND', 'JAVA', 'AWS', 'TYPESCRIPT', 'DOCKER', 'REACT', 'NEXT'],
@@ -110,7 +110,7 @@ export default function LandingPage() {
             cursor: '_',
           }}
         />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

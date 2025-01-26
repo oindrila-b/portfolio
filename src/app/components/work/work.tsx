@@ -22,33 +22,32 @@ const projects: Project[] = [
     liveLink: "https://task-manager-app.com",
   },
   { 
-    name: "Affirmation-extension", 
-    githubLink: "https://github.com/oindrila-b/affirmation-ext",
-    liveLink: "https://ecommerce-platform.com",
+    name: " JS Game", 
+    githubLink: "https://github.com/oindrila-b/2048_JS",
+    liveLink: "https://two048-js.onrender.com/", // No live link for this one
   },
   { 
-    name: "Chat App", 
-    githubLink: "https://github.com/oindrila-b/ChatApp",
-    liveLink: "https://chat-app-uhfv.onrender.com/",
+    name: "Affirmation-extension", 
+    githubLink: "https://github.com/oindrila-b/affirmation-ext",
+    liveLink: "",
   },
 ];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2, // Stagger animations
       duration: 0.4,
       ease: "easeOut",
     },
-  }),
+  },
 };
 
 const WorkSection: React.FC = () => {
   return (
-    <div className="min-h-screen py-16 flex flex-col items-center justify-center bg-gray-200">
+    <div className="min-h-screen py-16 flex flex-col items-center justify-center">
       <div className="container mx-auto px-8">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-12">
           My Work
@@ -64,8 +63,8 @@ const WorkSection: React.FC = () => {
               className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-indigo-500/50 transition-shadow duration-300 flex flex-col"
               variants={cardVariants}
               initial="hidden"
-              animate="visible"
-              custom={index}
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }} // Trigger animation every time it's in viewport
             >
               <h3 className="text-sm sm:text-sm md:text-[17px]/10 font-semibold text-white mb-4 tracking-widest text-center">
                 {project.name}
@@ -80,8 +79,9 @@ const WorkSection: React.FC = () => {
                 >
                   View Code on GitHub
                 </a>
-                {/* Live Link Icon */}
-                {project.liveLink && (
+                
+                {/* Conditionally Render Live Link Icon */}
+                {project.liveLink && project.liveLink !== "" && (
                   <a
                     href={project.liveLink}
                     target="_blank"
