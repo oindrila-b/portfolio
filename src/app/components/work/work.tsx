@@ -1,7 +1,103 @@
-export default function WorkPage() {
-    return (
-        <div>
-        
-        </div>
-    );
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { FiExternalLink } from "react-icons/fi"; // Install lucide-react for icons
+
+interface Project {
+  name: string;
+  githubLink: string;
+  liveLink?: string; // Optional live link
 }
+
+const projects: Project[] = [
+  { 
+    name: "Portfolio Website", 
+    githubLink: "https://github.com/oindrila-b/portfolio",
+    liveLink: "https://your-portfolio.com",
+  },
+  { 
+    name: "Task Manager App", 
+    githubLink: "https://github.com/your-username/task-manager-app",
+    liveLink: "https://task-manager-app.com",
+  },
+  { 
+    name: "E-commerce Platform", 
+    githubLink: "https://github.com/your-username/e-commerce-platform",
+    liveLink: "https://ecommerce-platform.com",
+  },
+  { 
+    name: "Blog CMS", 
+    githubLink: "https://github.com/your-username/blog-cms",
+    liveLink: "https://blog-cms.com",
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2, // Stagger animations
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const WorkSection: React.FC = () => {
+  return (
+    <div className="min-h-screen py-16 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white mb-12">
+          My Work
+        </h2>
+        <div
+          className={`grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ${
+            projects.length % 3 !== 0 ? "lg:justify-center" : ""
+          }`}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-indigo-500/50 transition-shadow duration-300 flex flex-col"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              custom={index}
+            >
+              <h3 className="text-sm sm:text-sm md:text-[17px]/10 font-semibold text-white mb-4 tracking-widest text-center">
+                {project.name}
+              </h3>
+              <div className="flex items-center justify-between">
+                {/* GitHub Link */}
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-400 hover:text-indigo-300 underline text-[10px]/8 sm:text-[12px]/8"
+                >
+                  View Code on GitHub
+                </a>
+                {/* Live Link Icon */}
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-400 hover:text-indigo-300 flex items-center"
+                  >
+                    <FiExternalLink className="w-5 h-5 ml-2 sm:w-6 sm:h-6 " aria-label="Live link" />
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WorkSection;
