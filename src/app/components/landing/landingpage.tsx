@@ -5,7 +5,6 @@ import { style } from "framer-motion/client";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
-import Typewriter from "typewriter-effect";
 export default function LandingPage() {
 
 
