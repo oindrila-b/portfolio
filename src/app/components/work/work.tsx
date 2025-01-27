@@ -12,19 +12,19 @@ interface Project {
 
 const projects: Project[] = [
   { 
+    name: " JS Game", 
+    githubLink: "https://github.com/oindrila-b/2048_JS",
+    liveLink: "https://two048-js.onrender.com/", // No live link for this one
+  },
+  { 
     name: "Portfolio Website", 
     githubLink: "https://github.com/oindrila-b/portfolio",
-    liveLink: "https://your-portfolio.com",
+    liveLink: "https://oindrilabanerjee.vercel.app/",
   },
   { 
     name: "The Corporate Dictionary", 
     githubLink: "https://github.com/oindrila-b/TheCorporateDictionary",
     liveLink: "https://task-manager-app.com",
-  },
-  { 
-    name: " JS Game", 
-    githubLink: "https://github.com/oindrila-b/2048_JS",
-    liveLink: "https://two048-js.onrender.com/", // No live link for this one
   },
   { 
     name: "Affirmation-extension", 
