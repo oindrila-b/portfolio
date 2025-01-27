@@ -24,7 +24,7 @@ const projects: Project[] = [
   { 
     name: "The Corporate Dictionary", 
     githubLink: "https://github.com/oindrila-b/TheCorporateDictionary",
-    liveLink: "https://task-manager-app.com",
+    liveLink: "",
   },
   { 
     name: "Affirmation-extension", 
